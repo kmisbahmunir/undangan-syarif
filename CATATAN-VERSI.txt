@@ -1,18 +1,13 @@
-UNDANGAN BANI KH. SYARIF KREMPYANG - FRONTEND v1
+UNDANGAN BANI KH. SYARIF KREMPYANG - FRONTEND v2
 =================================================
-Versi: 1 (pemasangan pertama, ZIP lengkap)
-Versi sebelumnya yang harus terpasang: tidak ada (ini yang pertama)
+Versi: 2
+Versi sebelumnya yang harus sudah terpasang: v1
 
-File baru: semua file di ZIP ini
-File diubah: tidak ada
+File diubah:
+- js/config.js  (tanda kutip berlebih di ujung link /exec dihapus; link server sudah terisi)
+- sw.js         (nomor versi cache dinaikkan ke v2)
+
+File baru: tidak ada
 File yang harus dihapus dari folder lama: tidak ada
 
-SEBELUM DIKIRIM KE GITHUB, isi dulu:
-- js/config.js : ganti tulisan URL_EXEC_DIISI_SETELAH_DEPLOY dengan link /exec dari Apps Script
-  (tulisan harus tetap berada di dalam tanda kutip).
-- js/data.js   : nomor panitia, nama ketua, garis keluarga, daftar keluarga (boleh dikosongkan dulu;
-  bagian kosong otomatis tidak tampil).
-
-Isi ZIP langsung berupa file dan folder (tanpa folder pembungkus):
-  index.html  admin.html  manifest.webmanifest  sw.js  offline.html  .nojekyll
-  css/  js/  icons/
+ZIP ini hanya berisi file yang berubah. Salin ke folder undangan-syarif dengan Replace (ganti).
