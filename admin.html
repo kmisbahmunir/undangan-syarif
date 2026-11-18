@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4A1220">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Kirim Undangan - Bani KH. Syarif Krempyang</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="khatam" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+        <rect x="12" y="12" width="40" height="40"/>
+        <rect x="12" y="12" width="40" height="40" transform="rotate(45 32 32)"/>
+        <circle cx="32" cy="32" r="8"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ======================= MASUK ======================= -->
+<section id="gerbang" class="gerbang">
+  <div class="gb">
+    <svg class="bintang" style="color:var(--e2)"><use href="#khatam"/></svg>
+    <div class="ar" lang="ar" dir="rtl">بسم الله الرحمن الرحيم</div>
+    <h1>Kirim Undangan</h1>
+    <p>Reuni &amp; Haul ke-28 Bani KH. Syarif Krempyang</p>
+    <form class="kartu-gb" id="f-masuk" autocomplete="off">
+      <label for="i-pin">Kode sekretaris</label>
+      <input id="i-pin" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text" aria-describedby="g-salah">
+      <label class="ingat"><input type="checkbox" id="i-ingat" checked> Ingat di HP ini</label>
+      <button class="tbl emas" id="b-masuk" type="submit">Masuk</button>
+      <div class="salah" id="g-salah" role="alert"></div>
+    </form>
+    <p style="margin-top:16px;font-size:13px;opacity:.65">Kode sekretaris dibuat saat setupAwal dijalankan (lihat panduan).</p>
+  </div>
+</section>
+
+<!-- ======================= APLIKASI ======================= -->
+<div id="app" hidden>
+  <header class="kepala">
+    <div class="kepala-isi">
+      <svg style="color:var(--e2)"><use href="#khatam"/></svg>
+      <div>
+        <h1>Kirim Undangan</h1>
+        <small>Reuni &amp; Haul ke-28 Bani KH. Syarif Krempyang</small>
+      </div>
+      <button class="keluar" id="b-keluar" type="button">Keluar</button>
+    </div>
+  </header>
+
+  <nav class="tab" role="tablist" aria-label="Menu">
+    <div class="tab-isi">
+      <button role="tab" id="t-buat" aria-selected="true" data-tab="buat">Buat</button>
+      <button role="tab" id="t-daftar" aria-selected="false" data-tab="daftar">Daftar<span class="lenc" id="n-daftar">0</span></button>
+      <button role="tab" id="t-banyak" aria-selected="false" data-tab="banyak">Banyak</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ---- BUAT ---- -->
+    <section id="p-buat" class="panel" role="tabpanel">
+      <h2>Undangan baru</h2>
+      <p class="pj">Isi nama dan alamat. Keduanya tertanam di undangan dan tidak bisa diubah oleh penerima.</p>
+      <form id="f-buat" autocomplete="off" novalidate>
+        <label class="lb" for="i-nama">Nama penerima</label>
+        <input class="fi" id="i-nama" maxlength="80" autocapitalize="words" placeholder="Bpk. H. Ahmad Fauzi &amp; Keluarga">
+        <label class="lb" for="i-alamat">Alamat</label>
+        <textarea class="fi" id="i-alamat" rows="2" maxlength="160" autocapitalize="sentences" placeholder="Jl. Melati No. 12, Tanjunganom, Nganjuk"></textarea>
+        <label class="lb" for="i-wa">Nomor WhatsApp <span class="op">(boleh kosong)</span></label>
+        <input class="fi" id="i-wa" type="tel" inputmode="tel" placeholder="0812 3456 7890">
+        <div class="info" id="wa-info"></div>
+
+        <div class="pratinjau" aria-live="polite">
+          <div class="t">Tertulis di undangan</div>
+          <b id="pv-nama">—</b>
+          <span id="pv-alamat"></span>
+        </div>
+        <button class="tbl utama" id="b-buat" type="submit">Buat Undangan</button>
+        <div class="info err" id="buat-err" role="alert"></div>
+      </form>
+    </section>
+
+    <!-- ---- DAFTAR ---- -->
+    <section id="p-daftar" role="tabpanel" hidden>
+      <div class="alat">
+        <input class="fi" id="i-cari" type="search" placeholder="Cari nama atau alamat" autocomplete="off">
+        <button class="tbl kecil" id="b-muat" type="button" aria-label="Muat ulang">&#8635;</button>
+      </div>
+      <div class="chip-baris" id="chips">
+        <button class="chip" data-f="semua" aria-pressed="true" type="button">Semua <span id="c-semua">0</span></button>
+        <button class="chip" data-f="Baru" aria-pressed="false" type="button">Belum dikirim <span id="c-baru">0</span></button>
+        <button class="chip" data-f="Terkirim" aria-pressed="false" type="button">Terkirim <span id="c-kirim">0</span></button>
+      </div>
+      <div id="daftar"></div>
+    </section>
+
+    <!-- ---- BANYAK ---- -->
+    <section id="p-banyak" class="panel" role="tabpanel" hidden>
+      <h2>Buat banyak sekaligus</h2>
+      <p class="pj">Satu penerima per baris, dipisah dengan tanda <b>|</b>. Alamat dan nomor WhatsApp boleh dikosongkan. Maksimal 100 baris.</p>
+      <label class="lb" for="i-banyak">Daftar penerima</label>
+      <textarea class="fi" id="i-banyak" rows="9" spellcheck="false" placeholder="Bpk. Ali &amp; Keluarga | Jl. A No. 1, Nganjuk | 0811 2222 3333&#10;Ibu Siti | Jl. B No. 2, Kertosono&#10;Bapak Hasan"></textarea>
+      <div style="height:12px"></div>
+      <button class="tbl utama" id="b-banyak" type="button">Buat Semua</button>
+      <div class="hasil-banyak" id="hasil-banyak" aria-live="polite"></div>
+      <p class="bantu">Tip: daftar dari Excel/Sheet bisa disalin langsung (kolom dipisah tab dibaca juga).</p>
+    </section>
+  </main>
+</div>
+
+<!-- ======================= LEMBAR AKSI ======================= -->
+<div id="lembar" class="lembar" hidden>
+  <div class="lembar-bg" data-tutup></div>
+  <div class="lembar-pn" role="dialog" aria-modal="true" aria-labelledby="l-nama">
+    <button class="lembar-x" data-tutup type="button" aria-label="Tutup">&#10005;</button>
+    <div class="siap" id="l-siap" hidden>&#10003; Undangan siap dikirim</div>
+    <h2 id="l-nama"></h2>
+    <p class="al" id="l-alamat"></p>
+    <p class="no" id="l-wa"></p>
+    <div class="aksi">
+      <button class="tbl utama" id="a-file" type="button"><span class="spin"></span> Menyiapkan file…</button>
+      <button class="tbl emas" id="a-wa" type="button">Kirim tautan lewat WhatsApp</button>
+      <div class="aksi-2">
+        <button class="tbl" id="a-lihat" type="button">Lihat undangan</button>
+        <button class="tbl" id="a-salin" type="button">Salin tautan</button>
+      </div>
+    </div>
+    <div class="ket" id="l-ket"></div>
+    <div class="garis-pisah"></div>
+    <div class="aksi-2">
+      <button class="tbl" id="a-tandai" type="button">Tandai terkirim</button>
+      <button class="tbl" id="a-drive" type="button">Simpan ke Drive</button>
+    </div>
+    <div style="height:9px"></div>
+    <button class="tbl bahaya" id="a-hapus" type="button">Hapus penerima ini</button>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

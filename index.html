@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2B0A14">
+<meta name="robots" content="noindex,nofollow">
+<title>Undangan Reuni &amp; Haul ke-28 Bani KH. Syarif Krempyang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<script>document.documentElement.className+=' js locked';</script>
+<link rel="stylesheet" href="css/undangan.css" data-inline="css">
+</head>
+<body>
+<script type="application/json" id="penerima">{}</script>
+<noscript><style>.cover{display:none}.sheet{visibility:visible}</style></noscript>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ros" viewBox="0 0 32 32">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
+        <rect x="8" y="8" width="16" height="16"/>
+        <rect x="8" y="8" width="16" height="16" transform="rotate(45 16 16)"/>
+      </g>
+      <circle cx="16" cy="16" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="fanous" viewBox="0 0 60 122">
+      <line x1="30" y1="0" x2="30" y2="26" stroke="#E2C079" stroke-width="1.5"/>
+      <path d="M23 27h14l4 8H19z" fill="#E2C079"/>
+      <path d="M19 35h22l6 36-17 28-17-28z" fill="rgba(248,232,196,.22)" stroke="#E2C079" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M30 35v64M24.5 35L19 71M35.5 35L41 71" stroke="#E2C079" stroke-width="1" opacity=".7"/>
+      <circle class="flame" cx="30" cy="62" r="7.5" fill="#FFE9A8"/>
+      <path d="M26 99h8l-2 9h-4z" fill="#E2C079"/>
+      <circle cx="30" cy="113" r="4" fill="#E2C079"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="bg" aria-hidden="true">
+  <div class="pat"></div>
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+  <div class="stars" id="stars"></div>
+</div>
+<canvas id="dust" aria-hidden="true"></canvas>
+<i class="shoot" aria-hidden="true"></i><i class="shoot b" aria-hidden="true"></i>
+<div id="prog" class="prog" aria-hidden="true"></div>
+
+<!-- ============ SAMPUL ============ -->
+<div id="cover" class="cover" role="region" aria-label="Sampul undangan">
+  <div class="lamp l" aria-hidden="true"><svg viewBox="0 0 60 122"><use href="#fanous"/></svg></div>
+  <div class="lamp r" aria-hidden="true"><svg viewBox="0 0 60 122"><use href="#fanous"/></svg></div>
+  <div class="stage">
+    <div class="cv-in" style="--i:0">
+      <svg class="moon" viewBox="0 0 54 54" aria-hidden="true">
+        <defs><mask id="cm"><rect width="54" height="54" fill="#fff"/><circle cx="35" cy="21" r="17" fill="#000"/></mask></defs>
+        <circle cx="25" cy="29" r="19" fill="#F8E8C4" mask="url(#cm)"/>
+        <path d="M43 8l1.6 3.6 3.9.4-2.9 2.6.8 3.8-3.4-1.9-3.4 1.9.8-3.8-2.9-2.6 3.9-.4z" fill="#F8E8C4"/>
+      </svg>
+    </div>
+    <div class="cv-in" style="--i:1;width:100%">
+    <div class="arch">
+      <div class="khatam" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <rect class="dr" pathLength="1" x="48" y="48" width="104" height="104"/>
+          <rect class="dr" pathLength="1" x="48" y="48" width="104" height="104" transform="rotate(45 100 100)"/>
+          <circle class="dr" pathLength="1" cx="100" cy="100" r="74"/>
+          <circle class="dr" pathLength="1" cx="100" cy="100" r="38"/>
+        </svg>
+      </div>
+      <p class="k">Undangan</p>
+      <p class="ar bsm" lang="ar" dir="rtl">بسم الله الرحمن الرحيم</p>
+      <h1 class="reuni shine">Reuni</h1>
+      <p class="ke"><small>&amp; Haul ke-</small><b class="gold">28</b></p>
+      <p class="klg">Keluarga Besar<br>Bani KH. Syarif Krempyang</p>
+      <p class="tmp">Bagbogo &middot; Tanjunganom &middot; Nganjuk</p>
+    </div>
+    </div>
+    <div class="to cv-in" style="--i:3">
+      <span class="l">Kepada yang terhormat</span>
+      <span id="c-nama" class="n">Bapak / Ibu / Saudara / i</span>
+      <span id="c-alamat" class="a" hidden></span>
+    </div>
+    <div id="c-note" class="cv-note cv-in" style="--i:4" role="status" aria-live="polite"></div>
+    <button id="buka" class="go cv-in" style="--i:4" type="button">Buka Undangan</button>
+  </div>
+</div>
+
+<!-- ============ ISI ============ -->
+<main id="isi" class="sheet">
+
+  <header id="beranda" class="pg hero" tabindex="-1" aria-label="Pembuka">
+    <div class="hlamp l" aria-hidden="true"><svg viewBox="0 0 60 122"><use href="#fanous"/></svg></div>
+    <div class="hlamp r" aria-hidden="true"><svg viewBox="0 0 60 122"><use href="#fanous"/></svg></div>
+    <p class="ar salam rv" lang="ar" dir="rtl">السلام عليكم ورحمة الله وبركاته</p>
+    <div class="oct hello-w rv" style="--d:.1s"><div class="oct-in hello">
+      <span class="l">Kepada yang terhormat</span>
+      <span id="h-nama" class="n">Bapak / Ibu / Saudara / i</span>
+      <span id="h-alamat" class="a" hidden></span>
+    </div></div>
+    <p class="lead rv" style="--d:.15s">Salam silaturahim dan semoga kita semua selalu dalam lindungan dan ridha Allah SWT. Amin Ya Robbal &lsquo;Alamin.</p>
+    <p class="lead rv" style="--d:.25s">Selanjutnya kami mengharap kehadiran bapak / ibu / saudara / i keluarga besar Bani KH. Syarif Krempyang pada:</p>
+  </header>
+
+  <section id="waktu" class="pg" aria-labelledby="h-waktu">
+    <p class="eyebrow rv">Waktu</p>
+    <h2 id="h-waktu" class="sr">Waktu acara</h2>
+    <div class="oct date rv zoom"><div class="oct-in">
+      <div class="star8 spin" style="animation-duration:90s" aria-hidden="true"><svg viewBox="0 0 200 200" fill="none" stroke="#E2C079" stroke-width="1"><rect x="48" y="48" width="104" height="104"/><rect x="48" y="48" width="104" height="104" transform="rotate(45 100 100)"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="40"/></svg></div>
+      <span class="lbl">Ahad</span>
+      <span class="tgl shine">20</span>
+      <span class="bln">Desember 2026 M</span>
+      <span class="hij">11 Rajab 1448 H</span>
+      <span class="sepl"></span>
+      <span class="lbl">Pukul</span>
+      <span class="jam gold">08.00 WIB</span>
+      <span class="lbl" style="margin-top:4px">s.d. selesai</span>
+    </div></div>
+    <div id="cd" class="cd rv" style="--d:.1s" role="timer" aria-label="Hitung mundur menuju reuni">
+      <div class="oct"><div class="oct-in"><b id="cd-d">00</b><small>Hari</small></div></div>
+      <div class="oct"><div class="oct-in"><b id="cd-h">00</b><small>Jam</small></div></div>
+      <div class="oct"><div class="oct-in"><b id="cd-m">00</b><small>Menit</small></div></div>
+      <div class="oct"><div class="oct-in"><b id="cd-s">00</b><small>Detik</small></div></div>
+    </div>
+    <p id="cd-note" class="cd-note" hidden></p>
+  </section>
+
+  <section id="tempat" class="pg" aria-labelledby="h-tempat">
+    <p class="eyebrow rv">Tempat</p>
+    <h2 id="h-tempat" class="h2 gold rv" style="--d:.05s">Sub Bani Mintahid</h2>
+    <p class="lead sm rv" style="margin-top:-8px">Rumah Keluarga Alm. Bapak Yusuf</p>
+    <figure id="skyfig" class="skyfig rv zoom" aria-hidden="true">
+      <i class="cloud a"></i><i class="cloud b"></i>
+      <svg viewBox="0 0 400 176" preserveAspectRatio="xMidYMax meet">
+        <defs>
+          <radialGradient id="mg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F8E8C4" stop-opacity=".55"/><stop offset="1" stop-color="#F8E8C4" stop-opacity="0"/></radialGradient>
+          <mask id="cm2"><rect width="60" height="60" fill="#fff"/><circle cx="38" cy="22" r="19" fill="#000"/></mask>
+          <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B1A30"/><stop offset="1" stop-color="#341019"/></linearGradient>
+        </defs>
+        <g class="moonglow"><circle cx="318" cy="44" r="58" fill="url(#mg)"/></g>
+        <g transform="translate(292 14)"><circle cx="28" cy="32" r="21" fill="#F8E8C4" mask="url(#cm2)"/></g>
+        <g id="sky-far"><path d="M0 176V132Q58 104 118 130T238 124T400 128V176Z" fill="url(#gr)" opacity=".85"/></g>
+        <g id="sky-near" fill="#1A0509">
+          <rect x="130" y="116" width="140" height="60"/>
+          <path d="M158 116C150 96 180 86 200 56C220 86 250 96 242 116Z"/>
+          <rect x="199" y="38" width="2" height="20"/>
+          <circle cx="200" cy="36" r="3.2"/>
+          <path d="M136 116a18 18 0 0 1 36 0z"/>
+          <path d="M228 116a18 18 0 0 1 36 0z"/>
+          <rect x="94" y="72" width="14" height="104"/>
+          <path d="M92 72L101 44L110 72Z"/>
+          <rect x="90" y="90" width="22" height="4"/>
+          <rect x="100" y="36" width="2" height="10"/>
+          <rect x="292" y="72" width="14" height="104"/>
+          <path d="M290 72L299 44L308 72Z"/>
+          <rect x="288" y="90" width="22" height="4"/>
+          <rect x="298" y="36" width="2" height="10"/>
+          <rect x="0" y="166" width="400" height="10"/>
+        </g>
+        <g class="win" fill="#F2C95E">
+          <path d="M149 168v-20a7 7 0 0 1 14 0v20z"/>
+          <path d="M171 168v-20a7 7 0 0 1 14 0v20z"/>
+          <path d="M190 168v-28a10 10 0 0 1 20 0v28z"/>
+          <path d="M215 168v-20a7 7 0 0 1 14 0v20z"/>
+          <path d="M237 168v-20a7 7 0 0 1 14 0v20z"/>
+        </g>
+      </svg>
+    </figure>
+    <address class="rv">Ds. Bagbogo, Kec. Tanjunganom<br>Kab. Nganjuk, Jawa Timur</address>
+    <a class="btn rv" href="https://www.google.com/maps/search/?api=1&amp;query=Bagbogo+Tanjunganom+Nganjuk" target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <span>Buka di peta</span>
+    </a>
+    <div class="kep rv">
+      <span class="lbl">Keperluan</span>
+      <b>Reuni &amp; Haul ke-28 Keluarga Besar Bani KH. Syarif Krempyang</b>
+    </div>
+  </section>
+
+  <section id="acara" class="pg" aria-labelledby="h-acara">
+    <p class="eyebrow rv">Susunan Acara</p>
+    <h2 id="h-acara" class="sr">Susunan acara</h2>
+    <div class="rule rv" aria-hidden="true"><svg viewBox="0 0 32 32" class="spin"><use href="#ros"/></svg></div>
+    <ol id="tl" class="tl">
+      <li class="rv"><b>Pembukaan</b></li>
+      <li class="rv"><b>Pembacaan Ayat Suci Al-Qur&rsquo;an</b></li>
+      <li class="rv"><b>Shalawat Nabi</b></li>
+      <li class="rv"><b>Tahlil</b></li>
+      <li class="rv"><b>Sambutan Pengurus</b></li>
+      <li class="rv"><b>Tepung Sedulur, Bekt Leluhur</b></li>
+      <li class="rv"><b>Do&rsquo;a</b></li>
+    </ol>
+  </section>
+
+  <section id="keluarga" class="pg" aria-labelledby="h-kel" hidden>
+    <p class="eyebrow rv">Daftar Keluarga</p>
+    <h2 id="h-kel" class="sr">Daftar keluarga</h2>
+    <div id="fam" class="fam"></div>
+  </section>
+
+  <section id="konfirmasi" class="pg" aria-labelledby="h-konf">
+    <p class="eyebrow rv">Konfirmasi Kehadiran</p>
+    <h2 id="h-konf" class="sr">Konfirmasi kehadiran</h2>
+    <div id="infaq" class="oct infaq rv zoom" hidden><div class="oct-in">
+      <span class="lbl">Infaq</span>
+      <span id="infaq-jml" class="jml shine"></span>
+      <span id="infaq-ket" class="lbl"></span>
+    </div></div>
+    <p class="note rv">Isi data di bawah, lalu kirim lewat WhatsApp ke panitia.</p>
+    <form id="rsvp" class="form rv" novalidate>
+      <div id="w-lock" class="lock" hidden>
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span><small>Undangan ini untuk</small><b id="l-nama"></b><small id="l-alamat"></small></span>
+      </div>
+      <div id="w-nama" class="fld" hidden>
+        <label for="f-nama">Nama Anda</label>
+        <input id="f-nama" class="fi" type="text" maxlength="60" autocomplete="name" placeholder="Contoh: Bpk. Ahmad">
+        <p id="err-nama" class="err" role="alert" hidden>Isi nama dulu supaya panitia tahu siapa yang hadir.</p>
+      </div>
+      <fieldset class="fld">
+        <legend>Kehadiran</legend>
+        <div class="seg">
+          <div class="opt"><input type="radio" name="hadir" id="h1" value="hadir" checked><label for="h1">Insya Allah hadir</label></div>
+          <div class="opt"><input type="radio" name="hadir" id="h2" value="belum"><label for="h2">Belum pasti</label></div>
+          <div class="opt"><input type="radio" name="hadir" id="h3" value="tidak"><label for="h3">Berhalangan</label></div>
+        </div>
+      </fieldset>
+      <div id="w-jml" class="fld">
+        <label for="f-jml">Jumlah yang hadir</label>
+        <div class="step">
+          <button id="min" type="button" aria-label="Kurangi jumlah">&minus;</button>
+          <input id="f-jml" class="fi" type="number" inputmode="numeric" min="1" max="30" value="1">
+          <button id="plus" type="button" aria-label="Tambah jumlah">+</button>
+        </div>
+      </div>
+      <div id="w-garis" class="fld" hidden>
+        <label for="f-garis">Dari garis keluarga</label>
+        <select id="f-garis" class="fi"></select>
+      </div>
+      <fieldset id="w-cp" class="fld" hidden>
+        <legend>Kirim ke panitia</legend>
+        <div id="cp" class="pick"></div>
+      </fieldset>
+      <details>
+        <summary>Lihat pesan yang akan dikirim</summary>
+        <textarea id="pv" class="pv" readonly rows="12" dir="ltr" aria-label="Pesan konfirmasi"></textarea>
+      </details>
+      <a id="wa" class="btn fill" href="https://wa.me/" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        <span>Kirim lewat WhatsApp</span>
+      </a>
+    </form>
+  </section>
+
+  <section id="penutup" class="pg" aria-label="Penutup">
+    <div class="rule rv" aria-hidden="true"><svg viewBox="0 0 32 32" class="spin"><use href="#ros"/></svg></div>
+    <p class="lead rv">Demikian undangan ini kami buat, atas kehadiran dan partisipasinya kami ucapkan terima kasih.</p>
+    <p class="doa rv">Jazakumulloh Khoiron Katsiroo</p>
+    <p class="ar salam rv" lang="ar" dir="rtl">والسلام عليكم ورحمة الله وبركاته</p>
+    <div id="ttd" class="ttd rv" hidden>
+      <span class="lbl">Ketua</span>
+      <span id="ketua" class="nama gold"></span>
+    </div>
+    <div class="tail rv" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="26" height="26" class="spin" style="color:var(--gold)"><use href="#ros"/></svg>
+      <span>Reuni &amp; Haul ke-28 Bani KH. Syarif Krempyang</span>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/config.js" data-inline="js"></script>
+<script src="js/data.js" data-inline="js"></script>
+<script src="js/undangan.js" data-inline="js"></script>
+</body>
+</html>
