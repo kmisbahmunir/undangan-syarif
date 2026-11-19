@@ -1,13 +1,7 @@
-UNDANGAN BANI KH. SYARIF KREMPYANG - FRONTEND v2
-=================================================
-Versi: 2
-Versi sebelumnya yang harus sudah terpasang: v1
-
-File diubah:
-- js/config.js  (tanda kutip berlebih di ujung link /exec dihapus; link server sudah terisi)
-- sw.js         (nomor versi cache dinaikkan ke v2)
-
+Undangan Syarif - frontend v3
+Syarat: v2 sudah terpasang.
+File diubah: index.html, admin.html, offline.html, css/undangan.css, css/admin.css, js/undangan.js, manifest.webmanifest, sw.js, icons/icon-192.png, icons/icon-512.png
 File baru: tidak ada
-File yang harus dihapus dari folder lama: tidak ada
-
-ZIP ini hanya berisi file yang berubah. Salin ke folder undangan-syarif dengan Replace (ganti).
+File dihapus: tidak ada
+Tidak ikut (jangan ditimpa): js/config.js, js/data.js
+Isi: tema hijau zamrud mewah (emas), ornamen berputar (sinar di belakang bulan, mawar di samping angka 28 dan di judul tiap bagian, mandala latar, medali penutup, logo admin), favicon hijau di halaman undangan dan admin (alamat ikon diberi ?v=3 agar browser tidak memakai ikon lama), halaman offline hijau.

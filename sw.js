@@ -1,6 +1,6 @@
 /* Service worker. Naikkan nomor VERSI setiap ada pembaruan file frontend. */
-var VERSI = 'undangan-syarif-v2';
-var STATIS = ['offline.html','css/undangan.css','css/admin.css','js/config.js','js/data.js','js/undangan.js','js/admin.js','icons/icon-192.png'];
+var VERSI = 'undangan-syarif-v3';
+var STATIS = ['offline.html','css/undangan.css','css/admin.css','js/config.js','js/data.js','js/undangan.js','js/admin.js','icons/icon-192.png?v=3'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSI).then(function (c) { return c.addAll(STATIS); }).then(function () { return self.skipWaiting(); }));

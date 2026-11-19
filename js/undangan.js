@@ -154,7 +154,7 @@
     var r=tl.getBoundingClientRect();
     var p=(vh*.72-r.top)/Math.max(1,r.height);
     tl.style.setProperty('--p',Math.max(0,Math.min(1,p)).toFixed(3));
-    if(!reduce){
+    if(!reduce&&vh>0){
       var s=skyfig.getBoundingClientRect(),d=(s.top+s.height/2-vh/2)/vh;
       near.setAttribute('transform','translate(0 '+(d*8).toFixed(2)+')');
       far.setAttribute('transform','translate('+(d*-14).toFixed(2)+' '+(d*3).toFixed(2)+')');
